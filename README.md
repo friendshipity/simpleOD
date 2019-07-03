@@ -1,9 +1,17 @@
 # simpleOD
-simple  
-大图
-![image](https://github.com/yyq90/simpleOD/blob/master/images/test.jpg)
+  
+测试大图  
+test.jpg  
+  
+![image](https://github.com/yyq90/simpleOD/blob/master/images/test.jpg)  
+  
+测试小图  
+  
+![image](https://github.com/yyq90/simpleOD/blob/master/images/crop.jpg)    
+crop.png  
 
-
+![image](https://github.com/yyq90/simpleOD/blob/master/images/crop2.jpg)      
+crop2.png  
 使用的方法  
 相似度的衡量
 根据小图T的尺寸，通过滑动窗口检测大图切片I(x+x',y+y')(下面用I'表示)，针对小图所有x',y',检测其和T(x‘,y’)是否都相等。
@@ -11,7 +19,12 @@ simple
 
 相似度
 #### 1.array match  
-result：
+result:  
+![image](https://github.com/yyq90/simpleOD/blob/master/images/det_raw_crop_2.png)    
+crop.png  
+![image](https://github.com/yyq90/simpleOD/blob/master/images/det_raw_crop.png)    
+crop.png  
+
 缺点，只是检测到和小图像素值完全一样的区域。
 #### 2.template match  
 类似1,计算T和I'
