@@ -1,7 +1,7 @@
 # simpleOD
 simple  
 大图
-![image](https://github.com/yyq90/simpleOD/raw/master/images/nongshalie.jpg)
+![image](https://github.com/yyq90/simpleOD/blob/master/images/test.jpg)
 
 
 使用的方法  
