@@ -62,8 +62,12 @@ for l in range(cluster_num):
     if mean > max_mean:
         max_mean = mean
         max_index = l
+results=[]
 for v in pred[pred[:, 0] == max_index]:
-    cv2.rectangle(img, (int(v[3]), int(v[2])), (int(v[3]) + by, int(v[2]) + bx), (0, 255, 0), 1)
+    # cv2.rectangle(img, (int(v[3]), int(v[2])), (int(v[3]) + by, int(v[2]) + bx), (0, 255, 0), 1)
+    results.append( (int(v[2]),int(v[3]), int(v[2]) + bx,int(v[3]) + by))
+# cv2.imwrite('det_raw_crop_2.png', img)
+print(results)
 
 # font = cv2.FONT_HERSHEY_SIMPLEX
 # for index,v in enumerate(sorted[-150:]):
@@ -88,4 +92,3 @@ for v in pred[pred[:, 0] == max_index]:
 #     # cv2.putText(img, (v[2], v[1]), (v[2] + by, v[1] + bx), (255, 255, 255), 1)
 #     cv2.putText(img, '%.2f' % v[0], (v[2], v[1]), font, 0.2, (0, 255, 0), 1)
 # bbox.append((v[2],v[1],v[2]+by,v[1]+bx))
-cv2.imwrite('det_raw_crop_2.png', img)
