@@ -68,10 +68,10 @@ crop2.png  cluster_num=5  top_n=200
 缺点,计算较慢，候选区域较多，top_n的值需要调大在测试。但是这样也增加了后面kmeans的计算量  
 ## 聚类  
 
-得到每个滑动窗口的得分后，取score排序top200的框.用score,坐标的x,y三个feature进行kmeans聚类（ssim的score,小于1，可以放大score，这样可以加强score feature的权重）。
-取score mean最高的类中的box作为最后的输出。类别数量num_cluster 和 top_n 作为超参
+得到每个滑动窗口的得分后，取score排序top200的框。用score，坐标的x，y，三个feature进行kmeans聚类（ssim的score小于1，可以放大score，这样可以加强score feature的权重）。
+取score mean最高的类中的box作为最后的输出。类别数量num_cluster 和 top_n 作为超参。
 
-讨论:  
+## 讨论:  
 1. 在此任务中，使用聚类这种方法可能会导致的泛化能力的降低(比如需要检测不同动作和颜色的所有飞机)。这个时候可以考虑使用nms对score top100个框进行处理。
 2. 不同于直接计算T和I'的相似度，可以用hog，orb方法提取feature进行比较或者训练。
 3. 可以在大图上采样neg sample，和一张pos sample的加噪, 用siamese网络去训练。
